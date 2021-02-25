@@ -1,5 +1,12 @@
-function fetchBooks() {
+// function fetchBooks('https://anapioficeandfire.com/') {
+//   .then(resp => resp.json())
+//   .then(json => console.log(json))
+// }
 
+function fetchBooks() {
+  return fetch("https://anapioficeandfire.com/api/books")
+    .then(resp => resp.json())
+    .then(json => renderBooks(json))
 }
 
 function renderBooks(books) {
@@ -14,3 +21,10 @@ function renderBooks(books) {
 document.addEventListener('DOMContentLoaded', function() {
   fetchBooks()
 })
+
+
+fetch('http://pargitaru.id.lv/api/?type=json&request=chords&chord=A') .then(function(response) {
+  return response.json();
+}).then(function(json) {
+  console.log(json);
+}); 
